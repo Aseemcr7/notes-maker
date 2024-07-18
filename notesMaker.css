@@ -1,0 +1,104 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.hd{
+    background-color: rgb(208, 28, 28);
+    height: 40px;
+    padding: 20px;
+}
+button{
+    background-color: rgb(208, 28, 28);
+    color: antiquewhite;
+    border-radius: 6px;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+}
+#plus{
+    position: absolute;
+    top: 79%;
+    left: 88%;
+    font-size: 50px;
+    border-radius: 50%;
+}
+.content{
+    color: antiquewhite;
+    background-color: black;
+    height: 40%;
+    width: 17%;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+.content h2{
+    color: rgb(208, 28, 28);
+    padding-bottom: 10px;
+}
+.content h5{
+    padding-bottom: 10px;
+}
+body{
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(214, 213, 156);
+}
+.popoverlay{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: none;
+    z-index: 2;
+}
+.popup{
+    position: absolute;
+    top: 30%;
+    left: 39%;
+    background-color: rgba(208, 28, 28, 0.784);
+    border-radius: 10px;
+    display: none;
+    width: 25%;
+    padding: 40px;
+    z-index: 3;
+}
+.popup input{
+    background: transparent;
+    border: none;
+    width: 100%;
+    border-bottom: solid 2px black;
+    padding: 10px;
+    font-size: larger;
+}
+.popup textarea{
+    background: transparent;
+    border: none;
+    width: 100%;
+    border: solid 2px black;
+    padding: 10px;
+    font-size: larger;
+}
+.popup input::placeholder{
+    color: black;
+}
+.popup textarea::placeholder{
+    color: black;
+    font-size: larger;
+}
+.popup textarea:focus{
+    outline: none;
+}
+.popup input:focus{
+    outline: none;
+}
+.popup button{
+    background-color: black;
+    margin-right: 10px;
+}

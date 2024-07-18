@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons8-notes-16.png">
+    <title>NOTES MAKER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="test2.css">
+</head>
+<body>
+    <div class="hd"><h1>NOTES MAKER</h1></div>
+    <div class="popoverlay"></div>
+    <div class="content">
+        <h2>GIVE A HEADING HERE</h2>
+        <h5>CREATED DATE AND DAY.</h5>
+        <P>Yor Description about your Notes will be here.</P>
+        <button onclick="dele()">Delete</button>
+    </div>
+    <div class="popup">
+        <h2>Add Book</h2>
+
+        <input type="text" id="Bname" placeholder="Book Title">
+        <input type="text" id="date" placeholder="Today Date" disabled/>
+        <textarea name="area" id="description" placeholder="Short Description"></textarea>
+        <button onclick="add()">ADD</button>
+        <button id="cancelpopup">CANCEL</button>
+    </div>
+    <button id="plus">+</button>
+    <script>
+        var popoverlay=document.querySelector(".popoverlay")
+        var popup=document.querySelector(".popup")
+        var plus=document.getElementById("plus")
+        
+        
+        plus.addEventListener("click",function(){
+            popoverlay.style.display="block"
+            popup.style.display="block"
+        })
+        cancelpopup =document.getElementById("cancelpopup")
+        cancelpopup.addEventListener("click",function(){
+            event.preventDefault()
+            popoverlay.style.display="none"
+            popup.style.display="none"
+        })
+
+        function add(){
+            var bname=document.getElementById("Bname").value
+            var date=document.getElementById("date").value = new Date().toDateString()
+            var description=document.getElementById("description").value
+            
+
+            var div=document.createElement("div")
+            div.setAttribute("class","content")
+            
+            var h2=document.createElement("h2")
+            h2.textContent=bname
+            div.appendChild(h2)
+
+            var h5=document.createElement("h5")
+            h5.textContent=date
+            div.appendChild(h5)
+
+            var para=document.createElement("p")
+            para.textContent=description
+            div.appendChild(para)
+
+            var btn = document.createElement("button");
+            btn.innerHTML = "Delete";
+            btn.addEventListener("click", function() {
+                dele();
+            });
+            div.appendChild(btn)
+            
+
+            document.body.appendChild(div)
+            popoverlay.style.display="none"
+            popup.style.display="none"
+        }
+        function dele(){
+            event.target.parentElement.remove()
+        }
+
+    </script>
+</body>
+</html>
